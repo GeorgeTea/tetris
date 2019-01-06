@@ -1,0 +1,29 @@
+div.container {
+    width: 250px;
+    height: 425px;
+    padding: 5px;
+    background: #fc0
+}
+
+div.container .row {
+    clear: left;
+}
+
+div.container .atom {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    float: left;
+}
+
+div.container .atom.empty {
+    background: #eee;
+}
+
+div.container .atom.temp {
+    background: #f96
+}
+
+div.container .atom.full {
+    background: #fba
+}

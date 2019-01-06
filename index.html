@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>tetris</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="tetris.css">
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div class="container">
+        <div id="gameBoard">
+            <div v-for="(r,i) in rows" class="row">
+                <div v-for="atom in rows[i].row" v-bind:class="atom.state" class="atom"></div>
+            </div>
+        </div>
+        <div id="score">
+            得分：{{number}}
+        </div>
+        <button id="opBtn" v-on:click="opBtnHandler">{{buttonName}}</button>
+    </div>
+
+    <script src="./lib/vue.js"></script>
+    <script src="board.js"></script>
+    <script src="tetromino.js"></script>
+    <script src="score.js"></script>
+    <script src="tetris.js"></script>
+</body>
+
+</html>
