@@ -1,7 +1,7 @@
 // 定义方块类型与键盘事件
 const tetrominos = [
-        [0xcc00]
-    ],
+    [0xcc00]
+],
     keycom = {
         // "38": "rotate(1)",
         "40": "down()",
@@ -80,7 +80,8 @@ function down() {
     } else {
         // 固定方块
         fixTetromino(tetromino);
-        // 刷新画板 TODO 此处待重构为面向对象式调用 
+        // 刷新画板
+        // TODO: 此处待重构为面向对象式调用 
         update();
     }
 }
@@ -119,6 +120,6 @@ function canMove() {
     return isRunning() && tetromino && !tetromino.fixed;
 }
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     eval(keycom[e.keyCode]);
 });
