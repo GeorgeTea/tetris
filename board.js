@@ -9,7 +9,7 @@ function initBoard() {
     for (let i = 0; i <= boardHeight - 1; i++) {
         rows[i] = initRow();
     }
-    return { rows: rows };
+    return rows;
 }
 
 // 初始化某一行

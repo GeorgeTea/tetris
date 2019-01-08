@@ -18,7 +18,7 @@ var app = new Vue({
 
 var gameBoard = new Vue({
     el: '#gameBoard',
-    data: initBoard()
+    data: { rows: initBoard() }
 });
 
 var score = new Vue({
@@ -36,9 +36,10 @@ var opBtn = new Vue({
     methods: {
         opBtnHandler: function (event) {
             switch (gameState) {
+                case (gameStateEnum.end):
+                    gameBoard.rows = initBoard();
                 case (gameStateEnum.init):
                 case (gameStateEnum.suspend):
-                case (gameStateEnum.end):
                     gameState = gameStateEnum.running;
                     run = setInterval(start, 200);
                     break;
