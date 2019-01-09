@@ -61,7 +61,7 @@ function start() {
         // 当前无未放置的方块
         if (!createTetromino()) {
             over();
-            console.log('game over');
+            console.log('game over!');
         }
     } else {
         // 当前有未放置的方块
