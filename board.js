@@ -7,7 +7,7 @@ const boardHeight = 20,
 function initBoard() {
     var rows = new Array(boardHeight);
     for (let i = 0; i <= boardHeight - 1; i++) {
-        rows[i] = initRow();
+        rows[i] = { row: initRow() };
     }
     return rows;
 }
@@ -18,7 +18,7 @@ function initRow() {
     for (let i = 0; i <= boardWidth - 1; i++) {
         row[i] = { state: atomStateEnum.empty };
     }
-    return { row: row };
+    return row;
 }
 
 // 修改某一行的状态
@@ -71,7 +71,7 @@ function remove(linesNeedRemove) {
     }
     // 补充空白行
     for (let i = 0, len = removeLength; i <= len - 1; i++) {
-        gameBoard.rows[i] = initRow();
+        gameBoard.rows[i].row = initRow();
     }
 }
 
