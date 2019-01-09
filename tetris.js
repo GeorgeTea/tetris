@@ -24,7 +24,8 @@ var gameBoard = new Vue({
 var score = new Vue({
     el: '#score',
     data: {
-        number: 0
+        number: 0,
+        level: 0
     }
 });
 
@@ -41,7 +42,8 @@ var opBtn = new Vue({
                 case (gameStateEnum.init):
                 case (gameStateEnum.suspend):
                     gameState = gameStateEnum.running;
-                    run = setInterval(start, 200);
+                    // TODO: 待重构
+                    run = setInterval(start, speedLevel[score.level]);
                     break;
                 case (gameStateEnum.running):
                     gameState = gameStateEnum.suspend;
@@ -71,6 +73,11 @@ function over() {
     clearInterval(run);
     gameState = gameStateEnum.end;
     opBtn.buttonName = gameState.btnName;
+}
+
+function refreshGameSpeed(){
+    clearInterval(run);
+    run = setInterval(start, speedLevel[score.level]);
 }
 
 function isRunning() {
