@@ -4,4 +4,4 @@ tetris based on vue
 
 基于vue的俄罗斯方块
 
-[在线体验](https://georgetea.github.io/tetris/)
+<a href="https://georgetea.github.io/tetris/" target="_blank">在线体验</a>
